@@ -1,0 +1,23 @@
+.bubble-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bubble-container span {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  border-radius: 50%;
+  animation: floatUp 10s linear infinite;
+  left: calc(var(--i) * 9%);
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(120vh) scale(0.5); }
+  100% { transform: translateY(-20vh) scale(1); }
+}

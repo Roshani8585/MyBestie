@@ -1,0 +1,120 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+  overflow: hidden;
+  backdrop-filter: blur(6px);
+}
+
+/* Sparkles */
+.sparkles {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(#ffffff80 1px, transparent 1px),
+    radial-gradient(#ffc8fa80 1px, transparent 1px),
+    radial-gradient(#ffd27d80 2px, transparent 2px);
+  background-size: 3px 3px, 4px 4px, 6px 6px;
+  animation: sparkleMove 6s infinite alternate;
+  opacity: 0.7;
+}
+
+@keyframes sparkleMove {
+  from {
+    transform: translateY(-20px);
+  }
+  to {
+    transform: translateY(20px);
+  }
+}
+
+/* Modal Holder */
+.modal-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+  width: 100%;
+  max-width: 450px;
+  padding-bottom: 40px;
+}
+
+/* Hands Image */
+.hands {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.hand-img {
+  width: 260px;
+  filter: drop-shadow(0 0 25px #ff7ad1);
+  animation: handFloat 3s ease-in-out infinite alternate;
+}
+
+@keyframes handFloat {
+  0% {
+    transform: translateY(8px);
+  }
+  100% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Magical Card */
+.magic-card {
+  position: absolute;
+  bottom: 110px;
+  background: linear-gradient(160deg, #ffdef1 10%, #ffb3e6 40%, #ffe6ff 90%);
+  padding: 28px;
+  border-radius: 25px;
+  box-shadow: 0 0 25px #ff7ad1, 0 0 45px #ffb3f1;
+  animation: glowPulse 3s infinite ease-in-out;
+  text-align: center;
+  width: 90%;
+}
+
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 20px #ff7ad1, 0 0 40px #ffb3f1;
+  }
+  100% {
+    box-shadow: 0 0 35px #ff9ada, 0 0 60px #ffc9f5;
+  }
+}
+
+.modal-title {
+  font-size: 32px;
+  color: #ff007f;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.modal-line {
+  color: #4a004e;
+  font-size: 17px;
+  margin: 8px 0;
+  font-weight: 500;
+}
+
+.enter-btn {
+  margin-top: 18px;
+  padding: 10px 26px;
+  background: linear-gradient(90deg, #ff2c9c, #ff7ad1);
+  color: white;
+  border: none;
+  font-size: 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 0 15px #ff7ad1;
+  transition: 0.3s;
+}
+
+.enter-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 25px #ff2c9c;
+}
