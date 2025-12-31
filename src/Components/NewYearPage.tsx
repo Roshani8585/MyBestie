@@ -9,9 +9,9 @@ const NewYearPage: React.FC = () => {
   const now = new Date();
 
   const isNewYear =
-    now.getDate() === 1 &&
-    now.getMonth() === 0 &&
-    now.getFullYear() === 2026;
+    now.getDate() === 31 &&
+    now.getMonth() === 11 &&
+    now.getFullYear() === 2025;
 
   const handleClick = () => {
     if (isNewYear) {
