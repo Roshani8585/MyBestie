@@ -21,7 +21,7 @@ const secretSongs = ["tKSPiBWLS_M", "QAtn8SvK2nU"]; // YouTube IDs
 
 const Dashboard: React.FC = () => {
   const [activeTab, setActiveTab] = useState<TabKey>("home");
-  const [currentSongIndex, setCurrentSongIndex] = useState(0);
+  // const [currentSongIndex, setCurrentSongIndex] = useState(0);
   const [memoryIndex, setMemoryIndex] = useState(0);
   
   // Secrets modal state
@@ -32,7 +32,7 @@ const Dashboard: React.FC = () => {
   // Reset song index when Secrets tab is selected
   useEffect(() => {
     if (activeTab === "secrets") {
-      setCurrentSongIndex(0);
+      // setCurrentSongIndex(0);
       setIsSecretModalOpen(true); // open modal first
       setIsSecretUnlocked(false); // reset unlock
       setSecretInput("");
@@ -42,9 +42,9 @@ const [playingVideos, setPlayingVideos] = useState<boolean[]>(
   secretSongs.map(() => false) // Initially, all videos are stopped
 );
 
-  const handleSongEnd = () => {
-    setCurrentSongIndex((prev) => (prev + 1) % secretSongs.length);
-  };
+  // const handleSongEnd = () => {
+  //   setCurrentSongIndex((prev) => (prev + 1) % secretSongs.length);
+  // };
 const handlePlayVideo = (index: number) => {
   setPlayingVideos((prev) =>
     prev.map((_, i) => i === index) // Only the clicked video is true, others false
@@ -69,31 +69,31 @@ const handleStopVideo = (index: number) => {
     }
   };
 
-  const renderSecrets = () => {
-    if (!isSecretUnlocked) return null;
+  // const renderSecrets = () => {
+  //   if (!isSecretUnlocked) return null;
 
-    return (
-      <div className="secret-box">
-        <h2>🤫 Secret Music & Love</h2>
-        <p className="secret-text">Close your eyes… let this play for your heart 🎶💖</p>
+  //   return (
+  //     <div className="secret-box">
+  //       <h2>🤫 Secret Music & Love</h2>
+  //       <p className="secret-text">Close your eyes… let this play for your heart 🎶💖</p>
 
-        <div style={{ position: "relative", width: "100%", height: "50%", marginTop: "20px" }}>
-          <iframe
-            key={secretSongs[currentSongIndex]}
-            src={`https://www.youtube.com/embed/${secretSongs[currentSongIndex]}`}
-            title="Secret Music Video"
-            style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none" }}
+  //       <div style={{ position: "relative", width: "100%", height: "50%", marginTop: "20px" }}>
+  //         <iframe
+  //           key={secretSongs[currentSongIndex]}
+  //           src={`https://www.youtube.com/embed/${secretSongs[currentSongIndex]}`}
+  //           title="Secret Music Video"
+  //           style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none" }}
            
-          />
-        </div>
+  //         />
+  //       </div>
 
-        {/* Stylish Hearts & Fireworks */}
-        <div className="secret-bg" />
-        <div className="secret-hearts">{Array.from({ length: 16 }).map((_, i) => (<span key={i} className="secret-heart">❤️</span>))}</div>
-        <div className="secret-fireworks">{Array.from({ length: 8 }).map((_, i) => (<span key={i} className="secret-spark" />))}</div>
-      </div>
-    );
-  };
+  //       {/* Stylish Hearts & Fireworks */}
+  //       <div className="secret-bg" />
+  //       <div className="secret-hearts">{Array.from({ length: 16 }).map((_, i) => (<span key={i} className="secret-heart">❤️</span>))}</div>
+  //       <div className="secret-fireworks">{Array.from({ length: 8 }).map((_, i) => (<span key={i} className="secret-spark" />))}</div>
+  //     </div>
+  //   );
+  // };
 const BestFriendWishes = () => {
   return (
     <div className="wish-wrapper">
