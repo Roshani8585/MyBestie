@@ -8,13 +8,13 @@ const NewYearPage: React.FC = () => {
 
   const now = new Date();
 
-  const isNewYear =
-    now.getDate() === 1 &&
-    now.getMonth() === 0 &&
-    now.getFullYear() === 2026;
+  // const isNewYear =
+  //   now.getDate() === 1 &&
+  //   now.getMonth() === 0 &&
+  //   now.getFullYear() === 2026;
 
   const handleClick = () => {
-    if (isNewYear) {
+    if (true) {
       navigate("/login");
     } else {
       setShowMessage(true);
